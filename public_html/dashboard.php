@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     
@@ -24,7 +24,7 @@
   </head>
   <body>
     <!-- ---NAVBAR---   -->
-    <?php include_once("./templates/header.php")  ?>
+    <?php include_once("./templates/header.php");  ?>
     <!-- ------------   -->
 
     <br/><br/>
@@ -52,8 +52,8 @@
                         <div class="col-sm-6">
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title">Special title treatment</h5>
-                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                    <h5 class="card-title">Title</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                                     <a href="#" class="btn btn-primary">Go somewhere</a>
                                 </div>
                             </div>
@@ -62,8 +62,53 @@
                 </div>
             </div>
         </div>
+    </div> 
+	<p></p>
+	<p></p>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+				<div class="card mx-auto" style="width: 18rem;">
+					<div class="card-body">
+						<h5 class="card-title">Categories</h5>
+						<p class="card-text">Manage your categories here.</p>
+						<a href="#" data-toggle="modal" data-target="#categoryModal" class="btn btn-primary">Add</a>
+						<a href="#" class="btn btn-primary">Manage</a>
+					</div>
+				</div>					
+            </div>
+            <div class="col-md-4">
+				<div class="card mx-auto">
+					<div class="card-body">
+						<h5 class="card-title">Brands</h5>
+						<p class="card-text">Manage your brands here.</p>
+						<a href="#" data-toggle="modal" data-target="#brandModal" class="btn btn-primary">Add</a>
+						<a href="#" class="btn btn-primary">Manage</a>
+					</div>
+				</div>
+            </div>
+            <div class="col-md-4">
+				<div class="card mx-auto">
+					<div class="card-body">
+						<h5 class="card-title">Products</h5>
+						<p class="card-text">Manage your products here.</p>
+						<a href="#" data-toggle="modal" data-target="#productModal" class="btn btn-primary">Add</a>
+						<a href="#" class="btn btn-primary">Manage</a>
+					</div>
+				</div>
+            </div>
+        </div>                        
     </div>
-
     
+    <!-- ---Category Form---   -->
+    <?php include_once("./templates/category.php");?>
+    <!-- -------------------   -->
+	<!-- -----Brand Form----   -->
+	<?php include_once("./templates/brand.php");?>
+    <!-- -------------------   -->
+	<!-- ---Products Form---   -->
+	<?php include_once("./templates/product.php");?>
+    <!-- -------------------   -->
+
   </body>
 </html>
