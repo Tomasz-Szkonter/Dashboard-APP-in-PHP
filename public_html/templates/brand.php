@@ -1,3 +1,5 @@
+	<!-- Just to distinguishe PHP from Hack in github repo, since both languages use that extension. -->
+	<?php ?>
 	<!-- Modal -->
 	<div class="modal fade" id="brandModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
