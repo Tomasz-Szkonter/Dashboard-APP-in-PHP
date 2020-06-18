@@ -90,4 +90,55 @@ $(document).ready(function(){
         status = true;
       }
     });
+
+    // Login logic
+
+    $("#form_login").on("submit",function(){
+      var email  = $("#log_email");
+      var pass   = $("#log_password");
+      var status = false;
+
+      if (email.val() == "") {
+        email.addClass("border-danger");
+        $("#e_error").html("<span class='text-danger'>You didn't type in your email</span>");
+        status = false;
+      } else {
+        email.removeClass("border-danger");
+        $("#e_error").html("");
+        status = true;
+      }
+
+      if (pass.val() == "") {
+        pass.addClass("border-danger");
+        $("#p_error").html("<span class='text-danger'>You didn't type in your password</span>");
+        status = false;
+      } else {
+        pass.removeClass("border-danger");
+        $("#p_error").html("");
+        status = true;
+      }
+
+      if(status) {
+        $.ajax({
+          url : DOMAIN+"/includes/process.php",
+          method : "POST",
+          data : $("#form_login").serialize(),
+          success : function(data){
+            if (data == "NOT_REGISTERD") {
+              email.addClass("border-danger");
+              $("#e_error").html("<span class='text-danger'>You are not registered</span>");
+            }else if(data == "WRONG_PASSWORD"){
+              pass.addClass("border-danger");
+              $("#p_error").html("<span class='text-danger'>Enter correct password</span>");
+              status = false;
+            }else{
+              console.log(data);
+              window.location.href = DOMAIN+"/dashboard.php";
+            }
+          }
+        })
+      }
+    })
+
+
 })
